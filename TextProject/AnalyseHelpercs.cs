@@ -8,5 +8,6 @@ namespace TextProject
 {
     class AnalyseHelpercs
     {
+
     }
 }
