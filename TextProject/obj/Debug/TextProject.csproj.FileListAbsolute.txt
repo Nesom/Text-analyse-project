@@ -1,0 +1,7 @@
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\bin\Debug\TextProject.exe.config
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\bin\Debug\TextProject.exe
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\bin\Debug\TextProject.pdb
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\obj\Debug\TextProject.csprojAssemblyReference.cache
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\obj\Debug\TextProject.csproj.CoreCompileInputs.cache
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\obj\Debug\TextProject.exe
+C:\Users\Анжела\Desktop\Text-analyse-project\TextProject\obj\Debug\TextProject.pdb

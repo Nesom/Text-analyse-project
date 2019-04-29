@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TextProject
 {
-    class AnalyseHelpercs
+    class AnalyseHelper
     {
         //вспомогательный метод, его не нужно использовать, он парсит текст в хэшсет
         public static HashSet<string> GetPointlessWords()
