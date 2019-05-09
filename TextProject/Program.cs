@@ -11,7 +11,6 @@ namespace TextProject
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }

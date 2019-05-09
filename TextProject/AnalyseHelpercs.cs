@@ -93,23 +93,24 @@ namespace TextProject
             return dict;
         }
 
-        //выдает словарь <индекс коллекции синонимов, частота>
-        public static Dictionary<int, int> GetFrequencySyn(string text, Dictionary<string, List<int>> dict)
-        {
-            var result = new Dictionary<int, int>();
+        public static Dictionary<string, int> GetNormalFrequencyOfSyno(string text, Dictionary<string, List<int>> dict)
+        {//работающая херная для синонимов , dict надо вводить из метода DeserializerDict()
+            var preresult = new Dictionary<int, int>();
+            var collection = dict.Select(x => x.Key).ToArray();
             var subDict = new Dictionary<string, int>();
+            var parseText = ParseText(text);
             foreach (var word in ParseText(text))
             {
                 if (dict.ContainsKey(word))
                 {
                     foreach (var index in dict[word])
                     {
-                        if (!result.ContainsKey(index))
+                        if (!preresult.ContainsKey(index))
                         {
-                            result[index] = 1;
+                            preresult[index] = 1;
                         }
                         else
-                            result[index]++;
+                            preresult[index]++;
                     }
                 }
                 else
@@ -120,8 +121,13 @@ namespace TextProject
                         subDict[word]++;
                 }
             }
-            result.OrderBy(x => x.Value);
-            subDict.OrderBy(x => x.Value);
+            var result = new Dictionary<string, int>(subDict);
+            foreach (var pair in preresult)
+            {
+                var word = collection[pair.Key];
+                if (parseText.Contains(word))//если корень синонима не содержится в тексте то пропускаем
+                    result.Add(word, pair.Value);
+            }
             return result;
         }
 
@@ -144,6 +150,11 @@ namespace TextProject
                 .Where(word => word != "" && word != "SYN" && word != "KEY")
                 .Select(word => word.ToLower().Trim()))
                 .ToArray();
+            for (int i = 0; i < t.Count(); i++)
+            {
+                if (t[i].FirstOrDefault() != null)
+                    result[t[i].First()] = new List<int> { i };
+            }
             for (int i = 0; i < t.Count(); i++)
             {
                 foreach (var word in t[i])

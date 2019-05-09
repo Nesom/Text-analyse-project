@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{018325AB-4394-4FB8-A429-4139809FB0F7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TextProject/AnalyseHelpercs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TextProject/TextAnalyser.cs">
     <Files>
-      <File FileName="TextProject/TextAnalyser.cs" Line="14" Column="1" />
-      <File FileName="TextProject/AnalyseHelpercs.cs" Line="149" Column="10" />
+      <File FileName="TextProject/TextAnalyser.cs" Line="10" Column="6" />
+      <File FileName="TextProject/AnalyseHelpercs.cs" Line="123" Column="14" />
+      <File FileName="TextProject/StringExtensions.cs" Line="152" Column="37" />
+      <File FileName="TextProject/Program.cs" Line="13" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TextProject" expanded="True">
             <Node name="TextProject" expanded="True">
-              <Node name="AnalyseHelpercs.cs" selected="True" />
+              <Node name="TextAnalyser.cs" selected="True" />
             </Node>
           </Node>
         </State>
