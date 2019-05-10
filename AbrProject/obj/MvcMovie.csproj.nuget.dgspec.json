@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj": {}
+    "C:\\Users\\Анжела\\Desktop\\Text-analyse-project\\AbrProject\\MvcMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj": {
+    "C:\\Users\\Анжела\\Desktop\\Text-analyse-project\\AbrProject\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj",
+        "projectUniqueName": "C:\\Users\\Анжела\\Desktop\\Text-analyse-project\\AbrProject\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj",
-        "packagesPath": "C:\\Users\\rakhi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\obj\\",
+        "projectPath": "C:\\Users\\Анжела\\Desktop\\Text-analyse-project\\AbrProject\\MvcMovie.csproj",
+        "packagesPath": "C:\\Users\\Анжела\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Анжела\\Desktop\\Text-analyse-project\\AbrProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rakhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Анжела\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

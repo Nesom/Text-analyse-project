@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Text;
 using System.Text.Encodings.Web;
 
 namespace MvcMovie.Controllers
@@ -22,15 +23,15 @@ namespace MvcMovie.Controllers
         {
             var form = HttpContext.Request.Form;
             var answer = form["answerid"];
-            var b = string.Empty;
+            var b = new StringBuilder();
             var a = TextAnalyzer.Analyze(answer.ToString());
             foreach(var e in a)
             {
                 
-                b += " " + e;
+                b.Append(e + "\n");
             }
-            c1.Answer = text + "a";
-            return View(new Views.HelloWorld.IndexModel() { Answer = b});
+           // c1.Answer = text + "a";
+            return View(new Views.HelloWorld.IndexModel() { Answer = b.ToString()});
         }
         // 
         // GET: /HelloWorld/Welcome/
