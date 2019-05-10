@@ -25,8 +25,7 @@
             <input type="submit" value="Analyze" class="btn btn-default" />
 
         </form>
-        <p>Your keywords: @*@Model.Answer*@</p>
-        @if (Model.Answer != null) { foreach (var e in Model.Answer.Split()) { WriteLine } }
+        @if (Model.Answer != null) { <p>Your keywords: @Model.Answer</p> }
         @*<p>@Model.Answer.Split()[2]</p>
         <p>@Model.Answer.Split()[3]</p>
         <p>@Model.Answer.Split()[4]</p>

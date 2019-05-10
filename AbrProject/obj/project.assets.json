@@ -12957,11 +12957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rakhi\\source\\repos\\MvcMovie\\MvcMovie.csproj",
+      "projectUniqueName": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj",
       "projectName": "MvcMovie",
-      "projectPath": "C:\\Users\\rakhi\\source\\repos\\MvcMovie\\MvcMovie.csproj",
+      "projectPath": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\MvcMovie.csproj",
       "packagesPath": "C:\\Users\\rakhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rakhi\\source\\repos\\MvcMovie\\obj\\",
+      "outputPath": "C:\\Users\\rakhi\\OneDrive\\Рабочий стол\\Text-analyse-project\\AnotherTry\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
