@@ -14,5 +14,6 @@ namespace MvcMovie.Views.HelloWorld
 
         }
         public string Answer { get; set; }
+        public string Stroka { get; set; }
     }
 }

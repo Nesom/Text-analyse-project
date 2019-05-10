@@ -26,12 +26,11 @@ namespace MvcMovie.Controllers
             var b = new StringBuilder();
             var a = TextAnalyzer.Analyze(answer.ToString());
             foreach(var e in a)
-            {
-                
+            {               
                 b.Append(e + "\n");
             }
            // c1.Answer = text + "a";
-            return View(new Views.HelloWorld.IndexModel() { Answer = b.ToString()});
+            return View(new Views.HelloWorld.IndexModel() { Answer = b.ToString(), Stroka = text});
         }
         // 
         // GET: /HelloWorld/Welcome/
