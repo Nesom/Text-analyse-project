@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@using System.Text;
 <html>
     <head>
         <meta charset="utf-8">
@@ -25,11 +26,21 @@
         </form>
         @if (Model.Answer != null)
         {
-            <p>Your keywords:</p>
+            int o = 1;
+            <p>Your keywords: @Model.Answer</p>
             @foreach (var e in Model.Answer.Split().Where(x => x != string.Empty))
             {
-                <input type="submit" value="@e" class="btn btn-default" />
-                <output>@Model.Stroka.Split('.').Where(x => x.Contains(e))</output>
+                <input style="color:black" type="submit" value="@o) @e" class="btn btn-default" />
+                o++;
+                <br />
+                var c = new StringBuilder();
+                foreach(var t in Model.Stroka.Split('.').Where(x=>x.ToLower().Contains(e)))
+                {
+                    c.Append(t);
+                    // <output style="color: black" class="btn btn-outline-dark">@t</output>
+                }
+                <output style="color: black" class="btn btn-outline-success">@c</output>
+                <br />
             }
         }
     </body>

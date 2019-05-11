@@ -30,7 +30,7 @@ namespace MvcMovie.Controllers
                 b.Append(e + "\n");
             }
            // c1.Answer = text + "a";
-            return View(new Views.HelloWorld.IndexModel() { Answer = b.ToString(), Stroka = text});
+            return View(new Views.HelloWorld.IndexModel() { Answer = b.ToString(), Stroka = answer});
         }
         // 
         // GET: /HelloWorld/Welcome/
