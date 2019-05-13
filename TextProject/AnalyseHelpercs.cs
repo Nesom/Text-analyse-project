@@ -99,7 +99,7 @@ namespace TextProject
             var collection = dict.Select(x => x.Key).ToArray();
             var subDict = new Dictionary<string, int>();
             var parseText = ParseText(text);
-            foreach (var word in ParseText(text))
+            foreach (var word in parseText)
             {
                 if (dict.ContainsKey(word))
                 {
@@ -121,12 +121,16 @@ namespace TextProject
                         subDict[word]++;
                 }
             }
-            var result = new Dictionary<string, int>(subDict);
+            var result = new Dictionary<string, int>();
             foreach (var pair in preresult)
             {
-                var word = collection[pair.Key];
-                if (parseText.Contains(word))//если корень синонима не содержится в тексте то пропускаем
-                    result.Add(word, pair.Value);
+                var syn = collection[pair.Key];
+                if (parseText.Contains(syn))
+                    result[syn] = pair.Value;
+            }
+            foreach (var pair in subDict)
+            {
+                result.Add(pair.Key, pair.Value);
             }
             return result;
         }
@@ -134,7 +138,8 @@ namespace TextProject
         //сортирует словарь
         public static Dictionary<string, int> GetOrderDict(Dictionary<string, int> dict)
         {
-            return (Dictionary<string, int>)dict.OrderBy(x => x.Value);
+            dict.OrderByDescending(x => x);
+            return dict;
         }
 
         public static Dictionary<string, List<int>> AnalizeDict()//выдает словарь синонимов из большого текста
@@ -142,7 +147,7 @@ namespace TextProject
             var separator = new char[] { ',', '.', ':', '\n' };
             var result = new Dictionary<string, List<int>>();
             var text = File.ReadAllText("dict.txt");
-            var t = text
+            var listOfList = text
                 .Split('=')
                 .Select(list => list
                 .Split(separator)
@@ -150,19 +155,71 @@ namespace TextProject
                 .Where(word => word != "" && word != "SYN" && word != "KEY")
                 .Select(word => word.ToLower().Trim()))
                 .ToArray();
-            for (int i = 0; i < t.Count(); i++)
+            for (int i = 0; i < listOfList.Count(); i++)
             {
-                if (t[i].FirstOrDefault() != null)
-                    result[t[i].First()] = new List<int> { i };
+                if (listOfList[i].FirstOrDefault() != null)
+                    result[listOfList[i].First()] = new List<int> { i };
+                if (listOfList[i].FirstOrDefault() == null)
+                    listOfList.ToList().RemoveAt(i);
             }
-            for (int i = 0; i < t.Count(); i++)
+            for (int i = 0; i < listOfList.Count(); i++)
             {
-                foreach (var word in t[i])
+                foreach (var word in listOfList[i])
                 {
                     if (!result.ContainsKey(word))
                         result[word] = new List<int>();
                     result[word].Add(i);
                 }
+            }
+            return result;
+        }
+
+        public static Dictionary<string, List<string>> AnalizeDict2()//выдает словарь синонимов из большого текста
+        {
+            var separator = new char[] { ',', '.', ':', '\n' };
+            var result = new Dictionary<string, List<string>>();
+            var text = File.ReadAllText("dict.txt");
+            var listOfList = text
+                .Split('=')
+                .Select(list => list
+                .Split(separator)
+                .TakeWhile(word => word != "ANT")
+                .Where(word => word != "" && word != "SYN" && word != "KEY")
+                .Select(word => word.ToLower().Trim()))
+                .ToArray();
+            for (int i = 0; i < listOfList.Count(); i++)
+            {
+                var syn = listOfList[i].FirstOrDefault();
+                if (syn == null) continue;
+                foreach (var word in listOfList[i])
+                {
+                    if (!result.ContainsKey(word))
+                        result[word] = new List<string>();
+                    result[word].Add(syn);
+                }
+            }
+            return result;
+        }
+
+        public static Dictionary<string, int> GetNormalFrequencyOfSyno2(string text, Dictionary<string, List<string>> wordToSyns)
+        {//работающая херная для синонимов , dict надо вводить из метода DeserializerDict()
+            var result = new Dictionary<string, int>();
+            var textInitial = (ParseText(text));
+            foreach (var word in textInitial)
+            {
+                if (wordToSyns.ContainsKey(word))
+                {
+                    foreach (var syn in wordToSyns[word])
+                    {
+                        if (!textInitial.Contains(syn)) continue;//если синонима нет в тексте
+                        if (!result.ContainsKey(syn))
+                            result[syn] = 0;
+                        result[syn]++;
+                    }
+                }
+                if (!result.ContainsKey(word))
+                    result[word] = 0;
+                result[word]++;
             }
             return result;
         }

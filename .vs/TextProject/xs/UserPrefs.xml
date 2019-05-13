@@ -1,28 +1,17 @@
 ﻿<Properties StartupConfiguration="{018325AB-4394-4FB8-A429-4139809FB0F7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TextProject/TextAnalyser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TextProject/AnalyseHelpercs.cs">
     <Files>
-      <File FileName="TextProject/TextAnalyser.cs" Line="10" Column="6" />
-      <File FileName="TextProject/AnalyseHelpercs.cs" Line="123" Column="14" />
-      <File FileName="TextProject/StringExtensions.cs" Line="152" Column="37" />
-      <File FileName="TextProject/Program.cs" Line="13" Column="10" />
+      <File FileName="TextProject/AnalyseHelpercs.cs" Line="214" Column="48" />
+      <File FileName="TextProject/Program.cs" Line="10" Column="18" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="TextProject" expanded="True">
-            <Node name="TextProject" expanded="True">
-              <Node name="TextAnalyser.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TextProject PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ildardavletarov/GitProject/Text-analyse-project/TextProject/Program.cs" relfile="TextProject/Program.cs" line="21" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
