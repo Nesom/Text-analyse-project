@@ -5,6 +5,14 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\HelloWorld\IMG_9988.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\HelloWorld\IMG_9988.JPG" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

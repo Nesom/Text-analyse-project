@@ -143,7 +143,7 @@ namespace MvcMovie
             if (Exceptions.ContainsKey(word)) return Exceptions[word];
             if (word[word.Length - 1] == 's' && !S_Exceptions.Contains(word))
             {
-                if (word[word.Length - 2] == 'e')
+                if (word.Length > 2 && word[word.Length - 2] == 'e')
                 {
                     if (word[word.Length - 3] == 'i') return word.Substring(0, word.Length - 3) + 'y';
                     if (Vowels.Contains(word[word.Length - 3])) return word.Substring(0, word.Length - 2);

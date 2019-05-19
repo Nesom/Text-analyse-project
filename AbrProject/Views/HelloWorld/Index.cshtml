@@ -6,22 +6,23 @@
         <title>TextAnalyzer</title>
         <link rel="stylesheet" href="~/StyleSheet.css">
     </head>
-    <body>
+    <body style="background-color: lightgray;
+    background: url(IMG_9988.JPG) /*no-repeat bottom; background-size: cover*/">
         @model MvcMovie.Views.HelloWorld.IndexModel
         @{
             ViewData["Title"] = "Index";
         }
 
-        <p>Type your text right here!</p>
+        <h2 style="text-align: center">Type your text right here!</h2>
         <form asp-action="Index" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label class="control-label">Text</label>
+                <label class="control-label">@*Text*@</label>
                 <input id="answerid" name="answerid" class="form-control" />
                 <span class="text-danger"></span>
             </div>
 
-            <input type="submit" value="Analyze" class="btn btn-default" />
+            <center><input style="" type="submit" value="Analyze" class="btn btn-dark" /></center>
 
         </form>
         @if (Model.Answer != null)
@@ -36,10 +37,10 @@
                 var c = new StringBuilder();
                 foreach(var t in Model.Stroka.Split('.').Where(x=>x.ToLower().Contains(e)))
                 {
-                    c.Append(t);
+                    c.Append(t + ".\n");
                     // <output style="color: black" class="btn btn-outline-dark">@t</output>
                 }
-                <output style="color: black" class="btn btn-outline-success">@c</output>
+                <output style="color: black; border-color: black" class="btn btn-default">@c</output>
                 <br />
             }
         }

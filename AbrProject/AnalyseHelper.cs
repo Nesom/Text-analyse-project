@@ -76,7 +76,7 @@ namespace MvcMovie
             return text
                 .Split(separator)
                 .Where(x => x != "")
-                .Select(x => x.ToLower());
+                .Select(x => x.ToLower().GetInitialForm());
         }
 
         //выдвет словарь <слово, частота>
