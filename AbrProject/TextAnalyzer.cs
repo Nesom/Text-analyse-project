@@ -12,8 +12,8 @@ namespace MvcMovie
             var d = AnalyseHelper.GetFrequency(text);
             var pointlessWord = AnalyseHelper.GetPointlessWords();
             d.Where(x => !pointlessWord.Contains(x.Key));
-            var collectIndex = AnalyseHelper.AnalizeDict().Select(x => x.Value);
-            var collectWord = AnalyseHelper.AnalizeDict().Select(x => x.Key).ToArray();
+            var collectIndex = AnalyseHelper.AnalizeDict2().Select(x => x.Value);
+            var collectWord = AnalyseHelper.AnalizeDict2().Select(x => x.Key).ToArray();
 
             //var govno = AnalyseHelper.GetFrequencySyn(text, AnalyseHelper.AnalizeDict()) ;
             //var normgovno = govno.Select(x =>
